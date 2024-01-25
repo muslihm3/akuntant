@@ -42,8 +42,8 @@ class ModelTransaksi extends Model
 
     public function getTransaksiByUserId($userId)
     {
-        return $this->where('user_id', $userId)->findAll();
         
+        return $this->where('user_id', $userId)->findAll(); 
     }
 
 

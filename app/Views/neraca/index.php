@@ -122,7 +122,7 @@
                       }
        
                       // Laba Rugi
-                      $kode_akun=$value->kode_akun3;
+                       $kode_akun=$value->kode_akun3;
                       $kode=substr($kode_akun,0,1);
 
                       if($kode==4){
@@ -139,9 +139,10 @@
                         $lb_kr=0;
                       }
 
+
                       // Neraca
                       if($kode<=3 and $ns>0){
-                        $nrbs=$debs;
+                        $nrbs=$debs; 
                         $totns=$totns+$nrbs;
                       } else {
                         $nrbs=0;

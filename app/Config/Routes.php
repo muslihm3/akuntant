@@ -31,7 +31,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/akun1', 'Akun1::index');
-$routes->post('/akun1', 'Akun1::store');
+$routes->post('/akun1', 'Akun1::store'); 
 $routes->put('/akun1/edit/(:any)', 'Akun1::update/$1');
 $routes->delete('/akun1/(:any)', 'Akun1::destroy/$1');
 

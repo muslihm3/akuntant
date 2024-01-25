@@ -33,28 +33,23 @@ class Transaksi extends ResourceController
      *
      * @return mixed
      */
-    public function index()
-    {
+        public function index()
+        {
+           
+                $userId = $this->auth->id();
 
-        // Mengecek apakah pengguna telah masuk atau tidak
-        // if ($this->auth->check()) {
-        //     Pengguna telah masuk, kita dapat mengambil ID pengguna
-            $userId = $this->auth->id();
+                // Menyimpan ID pengguna dalam variabel $data
+                $data['userId'] = $userId;
 
-            // Menyimpan ID pengguna dalam variabel $data
-            $data['userId'] = $userId;
+                // Melakukan operasi lain yang diperlukan dengan ID pengguna
+                // Misalnya, mengambil data transaksi berdasarkan ID pengguna
+                $data['dttransaksi'] = $this->objTransaksi->getTransaksiByUserId($userId);
 
-            // Melakukan operasi lain yang diperlukan dengan ID pengguna
-            // Misalnya, mengambil data transaksi berdasarkan ID pengguna
-            $data['dttransaksi'] = $this->objTransaksi->getTransaksiByUserId($userId);
+                
 
-            return view('transaksi/index', $data);
-        // } else {
-        //     // Jika pengguna belum masuk, tampilkan pesan
-        //     echo "Pengguna belum masuk.";
-        // }
-
-    }
+                return view('transaksi/index', $data);
+           
+        }
 
     /**
      * Return the properties of a resource object
@@ -63,6 +58,7 @@ class Transaksi extends ResourceController
      */
     public function show($id = null)
     {
+
         $transaksi= $this->objTransaksi->find($id);
         $akun3=$this->objAkun3->findAll();
         $status=$this->objStatus->findAll();

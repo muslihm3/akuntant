@@ -138,14 +138,14 @@
                       $kode=substr($kode_akun,0,1);
 
                       if($kode==4){
-                        $lb_db=$debs;
+                        $lb_db=$kres;
                         $lb_td=$lb_td+$lb_db;
                       } else {
                         $lb_db=0;
                       }
 
                       if($kode==5){
-                        $lb_kr=$kres;
+                        $lb_kr=$debs;
                         $lb_tk=$lb_tk+$lb_kr;
                       } else {
                         $lb_kr=0;
